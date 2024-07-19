@@ -110,12 +110,13 @@
       </div>
     </section>
 
-
+    <!-- Added comment section as another dynamic navbar element -->
+    
     <section id="comments-section" data-nav="Comments Section">
       <div class="landing__container">
         <h2>Comments</h2>
-        <div id="comments-container"></div>
-        <form id="comment-form">
+        <div id="comments-container" class="comments__container"></div>
+        <form id="comment-form" class="comment__form">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
           <label for="email">Email:</label>
@@ -124,7 +125,7 @@
           <textarea id="comment" name="comment" required></textarea>
           <button type="submit">Post Comment</button>
         </form>
-        <div id="error-message"></div>
+        <div id="error-message" class="error__message"></div>
       </div>
     </section>
   </main>

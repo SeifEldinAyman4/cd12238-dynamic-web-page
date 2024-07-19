@@ -57,19 +57,13 @@ function checkSections() {
 
 // Event listener for scrolling
 window.addEventListener('scroll', checkSections);
+
 // Runs upon scroll
 checkSections();
-
-
-
-
-
-
 
 const commentForm = document.getElementById('comment-form');
 const commentsContainer = document.getElementById('comments-container');
 const errorMessage = document.getElementById('error-message');
-
 
 commentForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -88,7 +82,7 @@ commentForm.addEventListener('submit', function (event) {
     const commentElement = document.createElement('div');
     commentElement.classList.add('comment');
     commentElement.innerHTML = `
-        <h3>${name}</h3>
+        <h3>${name} (${email})</h3>
         <p>${comment}</p>
     `;
     commentsContainer.appendChild(commentElement);
