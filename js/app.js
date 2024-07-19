@@ -59,3 +59,39 @@ function checkSections() {
 window.addEventListener('scroll', checkSections);
 // Runs upon scroll
 checkSections();
+
+
+
+
+
+
+
+const commentForm = document.getElementById('comment-form');
+const commentsContainer = document.getElementById('comments-container');
+const errorMessage = document.getElementById('error-message');
+
+
+commentForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const comment = document.getElementById('comment').value.trim();
+
+    if (name === '' || email === '' || comment === '') {
+        errorMessage.textContent = 'All fields are required.';
+        return;
+    }
+
+    errorMessage.textContent = '';
+
+    const commentElement = document.createElement('div');
+    commentElement.classList.add('comment');
+    commentElement.innerHTML = `
+        <h3>${name}</h3>
+        <p>${comment}</p>
+    `;
+    commentsContainer.appendChild(commentElement);
+
+    commentForm.reset();
+});
