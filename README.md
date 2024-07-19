@@ -1,13 +1,9 @@
 # Dynamic Web Page Project
 
-This project requires you to build a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page.
+This project is an example of a modern landing page. It features multiple dynamic sections throughout the page each representing a title and information regarding each section.
 
----
+Fancy modern design featuring an optimized smooth scroll, glassy particle shimmer across the background of each active section.
 
-## Instructions
+This landing page project also includes a comment section for users to express their opinions adding interactivity and socialism.
 
-The starter project has some HTML and CSS styling to display a static version of the Dynamic Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For more detailed requirements, see the project instructions in the Udacity Classroom.
+Responsive design that supports various devices.
