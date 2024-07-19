@@ -1,24 +1,21 @@
-/** TODO: Build the navigation bar using JavaScript **/
-let sectionList = document.getElementsByTagName("section");
-let sectionIDs = [];    
+const navbarList = document.getElementById('navbar__list');
+const sections = document.querySelectorAll('section');
 
-for (let i = 0; i < sectionList.length; i++) {
-    sectionIDs[i] = sectionList[i].id;
-}
+    sections.forEach(section => {
+        const sectionId = section.getAttribute('id');
+        const sectionNav = section.getAttribute('data-nav');
 
-let navbar = document.getElementById("navbar__list");
+        const listItem = document.createElement('li');
+        const anchor = document.createElement('a');
+        anchor.classList.add('menu__link');
+        anchor.href = `#${sectionId}`;
+        anchor.textContent = sectionNav;
 
-for (let i = 0; i < sectionList.length; i++) {
-     let navElement = document.createElement("li");
-     let navLink = document.createElement("a");
-     navLink.textContent = `Section ${i + 1}`;
-     navLink.setAttribute("href", `#${sectionIDs[i]}`);
-     navElement.appendChild(navLink);
-     navLink.classList.add("menu__link");
-     navbar.appendChild(navElement);
-}
-/** TODO: Add smooth scrolling **/
+        anchor.addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        });
 
-/** TODO: Add an active state **/
-
-/** TODO: Add a comment form **/
+        listItem.appendChild(anchor);
+        navbarList.appendChild(listItem);
+    });
